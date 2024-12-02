@@ -55,6 +55,8 @@ int main(int argc, char *argv[]) {
 
     // TODO: implement algorithm
 
+    printf("Info: the solution for the sample data should be %d\n", 0);
+    printf("Info: the solution for the actual data should be %d\n", 0);
     return EXIT_SUCCESS;
 }
 
