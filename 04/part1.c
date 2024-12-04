@@ -100,7 +100,7 @@ int main(int argc, char *argv[]) {
     printf("The total count of XMAS in the puzzle is %ld\n", count);
 
     printf("Info: the solution for the sample data should be %ld\n", 18L);
-    printf("Info: the solution for the actual data should be %ld\n", 0L);
+    printf("Info: the solution for the actual data should be %ld\n", 2591L);
     return EXIT_SUCCESS;
 }
 
