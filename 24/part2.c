@@ -131,7 +131,7 @@ struct swap {
     { "hqc", "qcw" },
     { "z35", "fdw" },
 };
-unsigned swap_count = 3;
+unsigned swap_count = 4;
 
 int get_value(char *name) {
     int result = VALUE_UNKNOWN;
@@ -141,6 +141,7 @@ int get_value(char *name) {
             break;
         }
     }
+    // it was not an input, so check gate outputs
     if (result == VALUE_UNKNOWN) {
         char *swap_name = name;
         for (unsigned i = 0; i < swap_count; i++) {
@@ -205,7 +206,7 @@ void propagate_signals(void) {
                 printf("Unknown gate type '%d'\n", gates[g].type); break;
             }
             gates[g].value = res;
-            if ((gates[g].out[0] == 'z') && (res == VALUE_UNKNOWN)) unknown_count += 1;
+            if (res == VALUE_UNKNOWN) unknown_count += 1;
         }
         //if (debug) printf("Still %u unknown\n", unknown_count);
         still_unknown = (unknown_count != 0);
